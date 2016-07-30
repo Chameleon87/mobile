@@ -1,1 +1,9 @@
-<Label>This is the customer registration page</Label>
+<StackLayout>
+<TextField hint="Email Address" keyboardType="email" [(ngModel)]="user.email"
+  autocorrect="false" autocapitalizationType="none" width=100%></TextField>
+
+<TextField hint="Password" secure="true" [(ngModel)]="user.password"
+ width=100%></TextField>
+
+<Button text="Register" class="register" (tap)="Register()"></Button>
+</StackLayout>

@@ -6,13 +6,13 @@ var appSettings = require("application-settings");
 
 @Component({
   moduleId: module.id,
-  selector: "reg-form",
+  selector: "login-form",
   providers: [ APIService ],
-  templateUrl: "./customer-login.html"
+  templateUrl: "./customer-login.html",
+  styleUrls: ["../customers.css"]
 })
 
 export class LoginComponent {
-  isLoggingIn = true;
 
   constructor (
     private _api: APIService,
@@ -20,10 +20,6 @@ export class LoginComponent {
   ) { }
 
   private user = new User()
-
-  toggleDisplay() {
-    this.isLoggingIn = !this.isLoggingIn;
-  }
 
   Login() {
     this._api.login(this.user).subscribe(
